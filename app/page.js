@@ -3,7 +3,7 @@ import { set, get, ref, push, onValue, onChildChanged, onChildAdded, onChildRemo
 import { useEffect, useState } from 'react';
 import { database } from '@/lib/firebase';
 import { nanoid } from 'nanoid'
-
+import '@/app/index.scss';
 export default function Home() {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
@@ -49,8 +49,7 @@ export default function Home() {
   
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      More doc: https://firebase.google.com/docs/database/web/lists-of-data?hl=zh-cn#listen_for_child_events
+    <main className="flex flex-col items-center justify-between">
       <div className='border'>
           <p>Username:<input name='username' type='text' value={username} onChange={e=>setUsername(e.target.value)} /></p>
           <p>Email: <input name='email' type='email' value={email} onChange={e => setEmail(e.target.value)} /></p>
