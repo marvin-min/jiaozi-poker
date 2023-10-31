@@ -7,6 +7,7 @@ import '@/app/index.scss';
 import _ from 'lodash';
 import PokerCard from '@/components/PokerCard';
 import Poker from '@/components/Poker/Poker';
+import RoomForm from '@/components/Room/RoomForm';
 export default function Home() {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
@@ -53,7 +54,7 @@ export default function Home() {
 
   return (
     <>
-      <Poker/>
-      </>
-      )
+      <RoomForm/>
+    </>
+    )
 }
