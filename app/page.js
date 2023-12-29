@@ -8,6 +8,7 @@ import _ from 'lodash';
 import PokerCard from '@/components/PokerCard';
 import Poker from '@/components/Poker/Poker';
 import RoomForm from '@/components/Room/RoomForm';
+import { offline } from '@/lib/firebase';
 export default function Home() {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
@@ -15,6 +16,7 @@ export default function Home() {
   const usersRef = ref(database, 'users');
 
   useEffect(() => {
+    
     onValue(usersRef, (snapshot) => {
       if (snapshot.exists()) {
         const userArray = Object.entries(snapshot.val()).map(([id, data]) => ({
@@ -50,7 +52,6 @@ export default function Home() {
     setUsername('');
     setEmail('');
   }
-
 
   return (
     <>

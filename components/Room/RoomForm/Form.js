@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import createRoom from '@/lib/roomService';
+import { createRoom } from '@/lib/roomService';
 import './index.scss';
 
 
